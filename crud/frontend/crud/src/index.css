@@ -1,0 +1,13 @@
+/* frontend/src/index.css */
+
+/* Centraliza o conteúdo verticalmente na página */
+body, html, #root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* Cor de fundo suave */
+}
