@@ -32,7 +32,6 @@ app.get('/api/items', (req, res) => {
     });
 });
 
-
 // Buscar por id
 
 app.get('/api/items/:id', (req, res) => {
@@ -55,6 +54,7 @@ app.get('/api/items/:id', (req, res) => {
 app.put('/api/items/:id', (req, res) => {
     const { id } = req.params;
     const { name, description } = req.body;
+    
     db.query('UPDATE items SET name = ?, description = ? WHERE id = ?', [name, description, id], (err) => {
         if (err) throw err;
         res.json({ id, name, description });

@@ -20,16 +20,19 @@ const App = () => {
         loadItems();  // Carrega os itens na montagem do componente
     }, []);
 
-    // Função chamada após adição de um item
-    const handleItemAdded = (item) => {
-        setItems([...items, item]);  // Adiciona o novo item na lista
-    };
 
     // Função chamada após atualização de um item
     const handleItemUpdated = (updatedItem) => {
         setItems(items.map(item => (item.id === updatedItem.id ? updatedItem : item)));
         setEditingItem(null);
     };
+
+    // Função chamada após adição de um item
+    const handleItemAdded = (item) => {
+        setItems([...items, item]);  // Adiciona o novo item na lista
+    };   
+
+
 
     // Função chamada após exclusão de um item
     const handleItemDeleted = (deletedItemId) => {
